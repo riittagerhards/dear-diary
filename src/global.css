@@ -1,9 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+:root {
+  /* COLORS */
+  --color-background: #fff;
+  --color-primary: #93c1be;
+  --color-secondary: #02734a;
+  --color-secondary-light: #02734a;
+  --color-effect: #e5b565;
+  --color-text-primary: #302f32;
+  --color-text-effect: #fff;
+
+  /* TYPOGRAPHY */
+  --font-text: 'Overlock', cursive;
+  --font-logo: 'Cookie', cursive;
+
+  /* BORDER-RADIUS */
+  --border-radius-card: 10px;
+  --border-radius-button: 5px;
+}
+
 body {
   margin: 0;
+  font-family: var(--font-text);
 }
