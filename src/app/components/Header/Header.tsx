@@ -1,5 +1,5 @@
 import styles from './Header.module.css';
-import NavigationIcon from '../Navigation/NavigationIcon.svg';
+import NavigationIcon from '../assets/NavigationIcon.svg';
 
 type headerTitleProps = {
   headerTitle: string;
