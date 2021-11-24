@@ -1,0 +1,19 @@
+.container {
+  background-color: var(--color-secondary);
+  color: var(--color-text-effect);
+  width: 100vw;
+  height: 5rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 15%;
+}
+
+.headerTitle {
+  justify-self: left;
+  align-self: center;
+}
+
+.navigationIcon {
+  justify-self: right;
+  align-self: center;
+}

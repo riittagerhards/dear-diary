@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 
 *,
@@ -18,7 +18,7 @@
   --color-text-effect: #fff;
 
   /* TYPOGRAPHY */
-  --font-text: 'Overlock', cursive;
+  --font-text: 'Quicksand', sans-serif;
   --font-logo: 'Cookie', cursive;
 
   /* BORDER-RADIUS */
@@ -29,4 +29,9 @@
 body {
   margin: 0;
   font-family: var(--font-text);
+  padding: 0;
+}
+
+h1 {
+  font-size: 1.5rem;
 }
