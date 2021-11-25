@@ -66,10 +66,6 @@
     transition: transform 0.5s ease-in;
   }
 
-  .navLinks li {
-    opacity: 0;
-  }
-
   .burger {
     display: block;
     position: absolute;

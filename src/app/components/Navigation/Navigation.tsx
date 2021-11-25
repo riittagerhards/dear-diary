@@ -10,7 +10,7 @@ function Navigation(): JSX.Element {
 
   return (
     <nav className={styles.container}>
-      <ul className={styles.navLinks}>
+      <ul className={`${styles.navLinks} ${navOpen ? styles.navOpen : ''} `}>
         <li>
           <a className={styles.activeLink} href="">
             Home
