@@ -63,7 +63,7 @@
     width: 40%;
     display: grid;
     transform: translateX(100%);
-    transition: trasform 0.5s ease-in;
+    transition: transform 0.5s ease-in;
   }
 
   .navLinks li {
@@ -77,6 +77,6 @@
   }
 }
 
-.navActive {
+.navOpen {
   transform: translateX(0%);
 }

@@ -1,6 +1,13 @@
+import { useState } from 'react';
 import styles from './Navigation.module.css';
 
 function Navigation(): JSX.Element {
+  const [navOpen, setNavOpen] = useState(false);
+
+  function handleClick() {
+    setNavOpen(!navOpen);
+  }
+
   return (
     <nav className={styles.container}>
       <ul className={styles.navLinks}>
@@ -30,7 +37,7 @@ function Navigation(): JSX.Element {
           </a>
         </li>
       </ul>
-      <div className={styles.burger}>
+      <div className={styles.burger} onClick={handleClick}>
         <div className={styles.lineOne}></div>
         <div className={styles.lineTwo}></div>
         <div className={styles.lineThree}></div>
