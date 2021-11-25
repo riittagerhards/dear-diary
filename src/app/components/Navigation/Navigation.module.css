@@ -36,10 +36,11 @@
 
 .burger div {
   display: block;
-  width: 1.5rem;
+  width: 1.2rem;
   height: 0.1rem;
   background-color: var(--color-text-effect);
   margin: 0.2rem;
+  transition: all 0.3s ease;
 }
 
 @media screen and (max-width: 1000px) {
@@ -63,7 +64,7 @@
     width: 40%;
     display: grid;
     transform: translateX(100%);
-    transition: transform 0.5s ease-in;
+    transition: 0.5s ease-in;
   }
 
   .burger {
@@ -75,4 +76,16 @@
 
 .navOpen {
   transform: translateX(0%);
+}
+
+.lineOne {
+  transform: rotate(-45deg) translate(-3.5px, 3.5px);
+}
+
+.lineTwo {
+  opacity: 0;
+}
+
+.lineThree {
+  transform: rotate(+45deg) translate(-3.5px, -3.5px);
 }

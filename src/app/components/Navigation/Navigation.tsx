@@ -38,9 +38,9 @@ function Navigation(): JSX.Element {
         </li>
       </ul>
       <div className={styles.burger} onClick={handleClick}>
-        <div className={styles.lineOne}></div>
-        <div className={styles.lineTwo}></div>
-        <div className={styles.lineThree}></div>
+        <div className={`${navOpen ? styles.lineOne : ''} `}></div>
+        <div className={`${navOpen ? styles.lineTwo : ''} `}></div>
+        <div className={`${navOpen ? styles.lineThree : ''} `}></div>
       </div>
     </nav>
   );
