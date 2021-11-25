@@ -15,7 +15,8 @@
   --color-secondary-light: #02734a;
   --color-effect: #e5b565;
   --color-text-primary: #302f32;
-  --color-text-effect: #fff;
+  --color-text-effect: #fcfcfc;
+  --color-text-inactive: #acacac;
 
   /* TYPOGRAPHY */
   --font-text: 'Quicksand', sans-serif;

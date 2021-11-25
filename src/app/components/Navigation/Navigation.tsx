@@ -2,16 +2,32 @@ import styles from './Navigation.module.css';
 
 function Navigation(): JSX.Element {
   return (
-    <nav>
-      <ul className={styles.navItems}>
+    <nav className={styles.container}>
+      <ul className={styles.navLinks}>
         <li>
-          <a href="">Home</a>
+          <a className={styles.activeLink} href="">
+            Home
+          </a>
         </li>
         <li>
-          <a href="">Add entry</a>
+          <a className={styles.activeLink} href="">
+            Add entry
+          </a>
         </li>
         <li>
-          <a href="">Gallery</a>
+          <a className={styles.activeLink} href="">
+            Gallery
+          </a>
+        </li>
+        <li>
+          <a className={styles.inactiveLink} href="">
+            Profile
+          </a>
+        </li>
+        <li>
+          <a className={styles.inactiveLink} href="">
+            Settings
+          </a>
         </li>
       </ul>
       <div className={styles.burger}>
