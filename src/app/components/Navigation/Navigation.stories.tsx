@@ -5,4 +5,4 @@ export default {
   title: 'Components/Navigation',
 };
 
-export const Default = () => <Navigation />;
+export const Default = () => <Navigation headerTitle="Hello, Riitta!" />;
