@@ -11,7 +11,7 @@
     "build-storybook": "build-storybook -o dist/storybook",
     "serve": "vite preview",
     "lint": "stylelint \"**/*.css\" && eslint . && prettier . --check",
-    "lint-fix": "stylelint \"**/*.css\" --fix && eslint . --fix && prettier . --write",
+    "lint-fix": "stylelint \"**/*.css\" --fix && eslint . --fix && prettier . --write && tsc --noEmit",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
     "start": "node dist/index.js"
