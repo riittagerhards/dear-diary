@@ -1,4 +1,4 @@
-import welcomePageImage from '../app/components/Welcome/welcomePageImage.jpg';
+import welcomePageImage from '../app/components/Welcome/welcomePageBackground.jpg';
 
 function Styleguide(): JSX.Element {
   return (
