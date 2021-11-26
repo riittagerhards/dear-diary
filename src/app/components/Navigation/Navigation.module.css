@@ -1,0 +1,100 @@
+.container {
+  background-color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  margin: 0;
+  overflow: visible;
+}
+
+.headerTitle {
+  color: var(--color-text-effect);
+  margin-left: 1.5rem;
+}
+
+.navLinks {
+  margin-right: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  padding: 0;
+}
+
+.navLinks li {
+  list-style: none;
+}
+
+.activeLink {
+  color: var(--color-text-effect);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.inactiveLink {
+  color: var(--color-text-inactive);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  display: block;
+  width: 1.2rem;
+  height: 0.1rem;
+  background-color: var(--color-text-effect);
+  margin: 0.2rem;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1000px) {
+  .navLinks {
+    width: 50%;
+    position: absolute;
+    right: 1rem;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .navLinks {
+    background-color: var(--color-secondary);
+    position: absolute;
+    right: 0;
+    top: 5rem;
+    margin: 0;
+    height: 15rem;
+    width: 40%;
+    display: grid;
+    transform: translateX(100%);
+    transition: 0.5s ease-in;
+  }
+
+  .burger {
+    display: block;
+    position: absolute;
+    right: 1rem;
+  }
+}
+
+.navOpen {
+  transform: translateX(0%);
+}
+
+.lineOne {
+  transform: rotate(-45deg) translate(-3.5px, 3.5px);
+}
+
+.lineTwo {
+  opacity: 0;
+}
+
+.lineThree {
+  transform: rotate(+45deg) translate(-3.5px, -3.5px);
+}
