@@ -12,7 +12,7 @@ function WelcomePage(): JSX.Element {
 
   return (
     <div className={styles.container}>
-      <img className={styles.icon} src={WelcomePageIcon} alt="" />
+      <img className={styles.icon} src={WelcomePageIcon} alt="dear diary" />
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
           className={styles.textInput}
