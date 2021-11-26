@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 
 *,
 *::before,
@@ -19,7 +18,6 @@
 
   /* TYPOGRAPHY */
   --font-text: 'Quicksand', sans-serif;
-  --font-logo: 'Cookie', cursive;
 
   /* BORDER-RADIUS */
   --border-radius-card: 10px;

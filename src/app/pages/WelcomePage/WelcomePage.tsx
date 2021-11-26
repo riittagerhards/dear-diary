@@ -17,7 +17,7 @@ function WelcomePage(): JSX.Element {
         <input
           className={styles.textInput}
           type="text"
-          placeholder="My name"
+          placeholder="my name"
           value={name}
           onChange={(event) => setName(event.target.value)}
         ></input>

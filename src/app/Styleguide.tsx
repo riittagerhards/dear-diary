@@ -29,14 +29,6 @@ function Styleguide(): JSX.Element {
           style={{
             width: '3rem',
             height: '3rem',
-            background: 'var(--color-secondary-light)',
-            borderRadius: '50%',
-          }}
-        />
-        <div
-          style={{
-            width: '3rem',
-            height: '3rem',
             background: 'var(--color-effect)',
             borderRadius: '50%',
           }}
@@ -54,14 +46,6 @@ function Styleguide(): JSX.Element {
       <h1>Header</h1>
       <p>Paragraph</p>
       <p>Font: Quicksand</p>
-      <p
-        style={{
-          fontFamily: 'var(--font-logo)',
-          fontSize: '1.3rem',
-        }}
-      >
-        Font: Cookie
-      </p>
       <div
         style={{
           display: 'flex',
@@ -72,7 +56,7 @@ function Styleguide(): JSX.Element {
       >
         <img
           src={welcomePageImage}
-          style={{ width: '8rem', height: '10rem' }}
+          style={{ width: '5rem', height: '10rem' }}
         />
         <p style={{ fontSize: '0.8rem' }}>welcome page image</p>
       </div>
