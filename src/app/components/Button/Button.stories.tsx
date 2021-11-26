@@ -8,4 +8,6 @@ export default {
   },
 };
 
-export const Default = (): JSX.Element => <Button type="" value="enter" />;
+export const Default = (): JSX.Element => (
+  <Button className="" type="" value="enter" />
+);

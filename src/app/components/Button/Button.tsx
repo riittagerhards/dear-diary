@@ -1,6 +1,7 @@
 import styles from './Button.module.css';
 
 type ButtonProps = {
+  className: string;
   type: string;
   value: string;
 };
