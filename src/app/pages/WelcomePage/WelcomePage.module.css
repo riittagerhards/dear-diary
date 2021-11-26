@@ -2,7 +2,7 @@
   display: grid;
   align-content: space-between;
   padding: 1.5em 0 2em;
-  background-image: url('../../components/Welcome/WelcomePageImage.jpg');
+  background-image: url('../../components/Welcome/WelcomePageBackground.jpg');
   background-size: cover;
   height: 100vh;
   width: 100%;
