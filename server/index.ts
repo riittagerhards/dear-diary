@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 dotenv.config();
+import path from 'path';
 import express from 'express';
 import { connectDatabase, getEntryCollection } from './database';
 
@@ -27,6 +28,14 @@ app.post('/api/entries', async (request, response) => {
   const entryCollection = getEntryCollection();
   const entryDocument = await entryCollection.insertOne(newEntry);
   response.send(entryDocument.insertedId);
+});
+
+// Serve production bundle
+app.use(express.static('dist'));
+
+// Handle client routing, return all requests to the app
+app.get('*', (_request, response) => {
+  response.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
 connectDatabase(process.env.MONGODB_URI).then(() =>
