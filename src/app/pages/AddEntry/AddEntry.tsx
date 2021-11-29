@@ -6,8 +6,29 @@ function AddEntry(): JSX.Element {
   return (
     <div className={styles.container}>
       <Navigation headerTitle={'How was your day?'} />
-      <form></form>
-      <Button className={styles.button} type={'submit'} value={'save'} />
+      <form className={styles.form}>
+        <input
+          className={styles.imageInput}
+          type=""
+          placeholder="add image"
+        ></input>
+        <input
+          className={styles.dateInput}
+          type=""
+          placeholder="... set date ..."
+        ></input>
+        <input
+          className={styles.titleInput}
+          type="text"
+          placeholder="... add title ..."
+        ></input>
+        <input
+          className={styles.textInput}
+          type="text"
+          placeholder="... add text ..."
+        ></input>
+        <Button className={styles.button} type={'submit'} value={'save'} />
+      </form>
     </div>
   );
 }

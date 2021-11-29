@@ -2,6 +2,27 @@
   display: grid;
 }
 
+.form {
+  display: grid;
+  margin: 1.5rem;
+  gap: 1rem;
+}
+
+.imageInput,
+.textInput {
+  width: 17.5rem;
+  height: 9rem;
+  background-color: var(--color-primary);
+  color: var(--color-text-effect);
+  border: none;
+  border-radius: var(--border-radius-card);
+  text-align: center;
+}
+
+input.textInput::placeholder {
+  color: var(--color-text-effect);
+}
+
 .button {
   width: 4.5rem;
 }
