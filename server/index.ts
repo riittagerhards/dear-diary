@@ -4,7 +4,7 @@ import express from 'express';
 import { connectDatabase, getEntryCollection } from './database';
 
 if (!process.env.MONGODB_URI) {
-  throw new Error('No MongoDB URI dotenv variable');
+  throw new Error('No MongoDB URI env variable');
 }
 
 const port = process.env.PORT || 3001;
