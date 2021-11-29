@@ -1,0 +1,7 @@
+.container {
+  display: grid;
+}
+
+.button {
+  width: 4.5rem;
+}
