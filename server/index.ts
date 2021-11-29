@@ -15,12 +15,6 @@ app.get('/api/hello', (_request, response) => {
   response.json({ message: 'Hello from server' });
 });
 
-connectDatabase(process.env.MONGODB_URI).then(() =>
-  app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
-  })
-);
-
 app.get('/api/entries', async (_request, response) => {
   const entryCollection = getEntryCollection();
   const entries = entryCollection.find();
@@ -34,3 +28,9 @@ app.post('/api/entries', async (request, response) => {
   const entryDocument = await entryCollection.insertOne(newEntry);
   response.send(entryDocument.insertedId);
 });
+
+connectDatabase(process.env.MONGODB_URI).then(() =>
+  app.listen(port, () => {
+    console.log(`Server is running at http://localhost:${port}`);
+  })
+);
