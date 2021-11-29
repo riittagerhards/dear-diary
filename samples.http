@@ -1,0 +1,13 @@
+### GET all entries
+GET http://localhost:3001/api/entries HTTP/1.1
+
+###POST an entry
+POST http://localhost:3001/api/entries HTTP/1.1
+Content-Type: application/json
+
+{
+    "imageURL": "https://example.com/image.png",
+    "date": "2021-11-29",
+    "title": "MongoDB day",
+    "text": "testing the best database ever"
+}
