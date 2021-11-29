@@ -7,6 +7,6 @@ export async function connectDatabase(url: string) {
   await client.connect();
 }
 
-export function getDearDiaryCollection() {
+export function getEntryCollection() {
   return client.db().collection('entries');
 }

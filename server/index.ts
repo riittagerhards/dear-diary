@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
-import { connectDatabase } from './database';
+import { connectDatabase, getEntryCollection } from './database';
 
 if (!process.env.MONGODB_URI) {
   throw new Error('No MongoDB URI dotenv variable');
@@ -20,3 +20,17 @@ connectDatabase(process.env.MONGODB_URI).then(() =>
     console.log(`Server is running at http://localhost:${port}`);
   })
 );
+
+app.get('/api/entries', async (_request, response) => {
+  const entryCollection = getEntryCollection();
+  const entries = entryCollection.find();
+  const allEntries = await entries.toArray();
+  response.send(allEntries);
+});
+
+app.post('/api/entries', async (request, response) => {
+  const newEntry = request.body;
+  const entryCollection = getEntryCollection();
+  const entryDocument = await entryCollection.insertOne(newEntry);
+  response.send(entryDocument.insertedId);
+});
