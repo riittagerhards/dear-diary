@@ -13,7 +13,7 @@ function AddEntry(): JSX.Element {
           type="text"
           placeholder="... add title ..."
           required
-        ></input>
+        / >
         <label className={styles.imageUpload}>
           <img src={UploadImageIcon} />
           <input
