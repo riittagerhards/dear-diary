@@ -1,6 +1,7 @@
 import styles from './AddEntry.module.css';
 import Button from '../../components/Button/Button';
 import Navigation from '../../components/Navigation/Navigation';
+import UploadImageIcon from '../../components/UploadImage/UploadImageIcon.svg';
 
 function AddEntry(): JSX.Element {
   return (
@@ -8,20 +9,20 @@ function AddEntry(): JSX.Element {
       <Navigation headerTitle={'How was your day?'} />
       <form className={styles.form}>
         <input
-          className={styles.imageInput}
-          type=""
-          placeholder="add image"
-        ></input>
-        <input
-          className={styles.dateInput}
-          type=""
-          placeholder="... set date ..."
-        ></input>
-        <input
           className={styles.titleInput}
           type="text"
           placeholder="... add title ..."
+          required
         ></input>
+        <label className={styles.imageUpload}>
+          <img src={UploadImageIcon} />
+          <input
+            className={styles.imageInput}
+            type="file"
+            accept="image/*"
+          ></input>
+        </label>
+        <input className={styles.dateInput} type="date" required></input>
         <input
           className={styles.textInput}
           type="text"
