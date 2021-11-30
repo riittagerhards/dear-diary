@@ -1,0 +1,56 @@
+.container {
+  display: grid;
+}
+
+.form {
+  margin: 1.5rem;
+  height: 75vh;
+  display: grid;
+  grid-template-rows: 1fr 9rem 1.5rem 9rem 1fr;
+  gap: 1rem;
+}
+
+.titleInput {
+  text-align: center;
+  font-size: 1.2rem;
+  border: none;
+}
+
+.imageUpload {
+  display: grid;
+  place-items: center;
+}
+
+.imageInput {
+  display: none;
+}
+
+.imageUpload,
+.textInput {
+  background-color: var(--color-primary);
+  color: var(--color-text-effect);
+  border: none;
+  border-radius: var(--border-radius-card);
+  text-align: center;
+}
+
+.dateInput {
+  font-size: 0.8rem;
+  border: solid var(--color-primary) 0.1rem;
+  border-radius: var(--border-radius-button);
+  font-family: var(--font-text);
+  text-align: center;
+}
+
+input.textInput::placeholder {
+  color: var(--color-text-effect);
+}
+
+.button {
+  width: 4.5rem;
+}
+
+.activeTextInput {
+  border: solid var(--color-primary) 0.2rem;
+  background-color: var(--color-background);
+}
