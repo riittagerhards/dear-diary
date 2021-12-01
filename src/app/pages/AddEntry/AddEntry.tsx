@@ -1,12 +1,25 @@
 import styles from './AddEntry.module.css';
 import Button from '../../components/Button/Button';
 import Navigation from '../../components/Navigation/Navigation';
-import UploadImageIcon from '../../components/UploadImage/UploadImageIcon.svg';
+import UploadImage from '../../components/UploadImage/UploadImage';
+import { useState } from 'react';
 
 function AddEntry(): JSX.Element {
+  const [imageUrl, setImageUrl] = useState<string | null>(null);
+
+  let content;
+
+  if (imageUrl) {
+    <UploadImage onUpload={setImageUrl} />;
+  } else {
+    content = <img src={imageUrl} />;
+  }
+
+  console.log(imageUrl);
   return (
     <div className={styles.container}>
       <Navigation headerTitle={'How was your day?'} />
+      {content}
       <form className={styles.form}>
         <input
           className={styles.titleInput}
@@ -14,10 +27,6 @@ function AddEntry(): JSX.Element {
           placeholder="... add title ..."
           required
         />
-        <label className={styles.imageUpload}>
-          <img src={UploadImageIcon} />
-          <input className={styles.imageInput} type="file" accept="image/*" />
-        </label>
         <input className={styles.dateInput} type="date" required></input>
         <input
           className={styles.textInput}

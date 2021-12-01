@@ -3,7 +3,11 @@ import UploadImageIcon from '../../components/UploadImage/UploadImageIcon.svg';
 import Button from '../Button/Button';
 import { ChangeEvent, FormEvent, useState } from 'react';
 
-function UploadImage(): JSX.Element {
+type ImageUploadProps = {
+  onUpload: (url: string) => void;
+};
+
+function UploadImage({ onUpload }: ImageUploadProps): JSX.Element {
   const [imageSelected, setImageSelected] = useState<File | null>(null);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -27,7 +31,7 @@ function UploadImage(): JSX.Element {
       body: formData,
     })
       .then((response) => response.json())
-      .then((result) => console.log(result.url));
+      .then((result) => onUpload(result.url));
   };
 
   return (
