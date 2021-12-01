@@ -6,8 +6,15 @@
   margin: 1.5rem;
   height: 75vh;
   display: grid;
-  grid-template-rows: 1fr 9rem 1.5rem 9rem 1fr;
+  grid-template-rows: 12rem 1fr 1.5rem 2fr 1.5rem;
   gap: 1rem;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius-card);
 }
 
 .titleInput {
@@ -16,16 +23,6 @@
   border: none;
 }
 
-.imageUpload {
-  display: grid;
-  place-items: center;
-}
-
-.imageInput {
-  display: none;
-}
-
-.imageUpload,
 .textInput {
   background-color: var(--color-primary);
   color: var(--color-text-effect);

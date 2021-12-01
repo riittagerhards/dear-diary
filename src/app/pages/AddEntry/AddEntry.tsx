@@ -12,14 +12,14 @@ function AddEntry(): JSX.Element {
   if (!imageUrl) {
     content = <UploadImage onUpload={setImageUrl} />;
   } else {
-    content = <img src={imageUrl} />;
+    content = <img src={imageUrl} className={styles.image} />;
   }
 
   return (
     <div className={styles.container}>
       <Navigation headerTitle={'How was your day?'} />
-      {content}
       <form className={styles.form}>
+        {content}
         <input
           className={styles.titleInput}
           type="text"

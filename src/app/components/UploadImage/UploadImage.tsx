@@ -1,7 +1,6 @@
 import styles from './UploadImage.module.css';
 import UploadImageIcon from '../../components/UploadImage/UploadImageIcon.svg';
-import Button from '../Button/Button';
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 type ImageUploadProps = {
   onUpload: (url: string) => void;
@@ -17,8 +16,7 @@ function UploadImage({ onUpload }: ImageUploadProps): JSX.Element {
     setImageSelected(event.target.files[0]);
   };
 
-  const uploadCloudinary = (event: FormEvent) => {
-    event.preventDefault();
+  const uploadCloudinary = () => {
     if (!imageSelected) {
       return;
     }
@@ -36,17 +34,21 @@ function UploadImage({ onUpload }: ImageUploadProps): JSX.Element {
 
   return (
     <div className={styles.container}>
-      <form onSubmit={uploadCloudinary}>
-        <label>
+      <label>
+        <div>
           <img src={UploadImageIcon} />
           <input
             type="file"
             className={styles.imageUpload}
             onChange={handleChange}
           />
-        </label>
-        <Button className={styles.button} type={'submit'} value={'upload'} />
-      </form>
+        </div>
+        <button
+          className={styles.button}
+          type="submit"
+          onClick={uploadCloudinary}
+        />
+      </label>
     </div>
   );
 }
