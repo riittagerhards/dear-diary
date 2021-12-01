@@ -8,4 +8,4 @@ export default {
   },
 };
 
-export const Default = (): JSX.Element => <ImageUpload />;
+export const Default = (): JSX.Element => <ImageUpload onUpload={alert} />;
