@@ -9,13 +9,12 @@ function AddEntry(): JSX.Element {
 
   let content;
 
-  if (imageUrl) {
-    <UploadImage onUpload={setImageUrl} />;
+  if (!imageUrl) {
+    content = <UploadImage onUpload={setImageUrl} />;
   } else {
     content = <img src={imageUrl} />;
   }
 
-  console.log(imageUrl);
   return (
     <div className={styles.container}>
       <Navigation headerTitle={'How was your day?'} />
