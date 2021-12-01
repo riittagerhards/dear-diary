@@ -1,5 +1,6 @@
 import styles from './UploadImage.module.css';
-//import Button from '../Button/Button';
+import UploadImageIcon from '../../components/UploadImage/UploadImageIcon.svg';
+import Button from '../Button/Button';
 import { ChangeEvent, FormEvent, useState } from 'react';
 
 function UploadImage(): JSX.Element {
@@ -10,7 +11,6 @@ function UploadImage(): JSX.Element {
       return;
     }
     setImageSelected(event.target.files[0]);
-    console.log(event.target.files[0]);
   };
 
   const uploadCloudinary = (event: FormEvent) => {
@@ -25,20 +25,25 @@ function UploadImage(): JSX.Element {
     fetch('https://api.cloudinary.com/v1_1/rger/image/upload', {
       method: 'POST',
       body: formData,
-    }).then((response) => {
-      console.log(response);
-    });
+    })
+      .then((response) => response.json())
+      .then((result) => console.log(result.url));
   };
 
   return (
-    <form onSubmit={uploadCloudinary}>
-      <input
-        type="file"
-        className={styles.imageUpload}
-        onChange={handleChange}
-      />
-      <button className={styles.button} type="submit" value="upload" />
-    </form>
+    <div className={styles.container}>
+      <form onSubmit={uploadCloudinary}>
+        <label>
+          <img src={UploadImageIcon} />
+          <input
+            type="file"
+            className={styles.imageUpload}
+            onChange={handleChange}
+          />
+        </label>
+        <Button className={styles.button} type={'submit'} value={'upload'} />
+      </form>
+    </div>
   );
 }
 
