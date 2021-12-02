@@ -14,12 +14,7 @@ function UploadImage({ onUpload }: ImageUploadProps): JSX.Element {
       return;
     }
     setImageSelected(event.target.files[0]);
-  };
 
-  const uploadCloudinary = () => {
-    if (!imageSelected) {
-      return;
-    }
     const formData = new FormData();
     formData.append('file', imageSelected);
     formData.append('upload_preset', 'bmnorbj6');
@@ -35,18 +30,11 @@ function UploadImage({ onUpload }: ImageUploadProps): JSX.Element {
   return (
     <div className={styles.container}>
       <label>
-        <div>
-          <img src={UploadImageIcon} />
-          <input
-            type="file"
-            className={styles.imageUpload}
-            onChange={handleChange}
-          />
-        </div>
-        <button
-          className={styles.button}
-          type="submit"
-          onClick={uploadCloudinary}
+        <img src={UploadImageIcon} />
+        <input
+          type="file"
+          className={styles.imageUpload}
+          onChange={handleChange}
         />
       </label>
     </div>
