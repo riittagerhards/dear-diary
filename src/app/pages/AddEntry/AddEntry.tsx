@@ -61,6 +61,7 @@ function AddEntry(): JSX.Element {
           className={styles.textInput}
           type="text"
           placeholder="Place for your text"
+          maxLength={250}
           value={text}
           onChange={(event) => setText(event.target.value)}
         />
