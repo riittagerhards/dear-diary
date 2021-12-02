@@ -1,5 +1,5 @@
 .button {
-  background-color: var(--color-effect);
+  background-color: var(--color-secondary);
   border: none;
   text-align: center;
   color: var(--color-text-effect);
@@ -10,10 +10,10 @@
 }
 
 .button:hover {
-  background-color: var(--color-secondary);
+  background-color: var(--color-effect);
 }
 
 .button:active {
-  background-color: var(--color-secondary);
+  background-color: var(--color-effect);
   transform: translateY(3px);
 }
