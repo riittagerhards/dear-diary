@@ -1,0 +1,17 @@
+.container {
+  background-color: var(--color-primary);
+  height: 9rem;
+  min-width: 9rem;
+  border-radius: var(--border-radius-card);
+  display: grid;
+  place-content: center;
+}
+
+.button {
+  width: 3rem;
+  height: 1.5rem;
+}
+
+.imageUpload {
+  display: none;
+}
