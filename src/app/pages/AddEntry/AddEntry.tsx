@@ -8,7 +8,7 @@ import { FormEvent, useState } from 'react';
 function AddEntry(): JSX.Element {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const { postEntry } = usePostEntry();
-  const [date, setDate] = useState();
+  const [date, setDate] = useState('');
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
 
@@ -33,7 +33,7 @@ function AddEntry(): JSX.Element {
 
     setImageUrl(null);
     setTitle('');
-    setDate(undefined);
+    setDate('');
     setText('');
   };
 

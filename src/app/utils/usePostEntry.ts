@@ -1,7 +1,7 @@
 function usePostEntry() {
   const postEntry = async (entry: {
     imageUrl: string | null;
-    date: number | undefined;
+    date: string;
     title: string;
     text: string;
   }) => {
