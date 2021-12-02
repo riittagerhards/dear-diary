@@ -65,7 +65,7 @@ function AddEntry(): JSX.Element {
           value={text}
           onChange={(event) => setText(event.target.value)}
         />
-        <Button className={styles.button} type={'submit'} value={'save'} />
+        <Button className={styles.button} type={'submit'} name={'save'} />
       </form>
     </div>
   );
