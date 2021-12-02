@@ -46,8 +46,3 @@ input.textInput::placeholder {
 .button {
   width: 4.5rem;
 }
-
-.activeTextInput {
-  border: solid var(--color-primary) 0.2rem;
-  background-color: var(--color-background);
-}

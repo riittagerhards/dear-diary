@@ -8,7 +8,6 @@ function AddEntry(): JSX.Element {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
 
   let content;
-
   if (!imageUrl) {
     content = <UploadImage onUpload={setImageUrl} />;
   } else {
@@ -23,14 +22,14 @@ function AddEntry(): JSX.Element {
         <input
           className={styles.titleInput}
           type="text"
-          placeholder="... add title ..."
+          placeholder="Give your day a title"
           required
         />
         <input className={styles.dateInput} type="date" required></input>
         <input
           className={styles.textInput}
           type="text"
-          placeholder="... add text ..."
+          placeholder="Place for your text"
         />
         <Button className={styles.button} type={'submit'} value={'save'} />
       </form>
