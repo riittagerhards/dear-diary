@@ -26,8 +26,19 @@ app.get('/api/entries', async (_request, response) => {
 app.post('/api/entries', async (request, response) => {
   const newEntry = request.body;
   const entryCollection = getEntryCollection();
-  const entryDocument = await entryCollection.insertOne(newEntry);
-  response.send(entryDocument.insertedId);
+  const existingEntry = await entryCollection.findOne({
+    date: newEntry.date,
+  });
+  if (!existingEntry) {
+    const entryDocument = await entryCollection.insertOne(newEntry);
+    response
+      .status(200)
+      .send(`${entryDocument.insertedId} was added to your diary`);
+  } else {
+    response
+      .status(409)
+      .send('You already have an entry for this day. Do you want to edit it?');
+  }
 });
 
 // Serve production bundle

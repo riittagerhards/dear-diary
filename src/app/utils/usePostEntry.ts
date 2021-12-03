@@ -1,11 +1,11 @@
 function usePostEntry() {
   const postEntry = async (entry: {
-    imageURL: string;
-    date: Date;
+    imageUrl: string | null;
+    date: string;
     title: string;
     text: string;
   }) => {
-    await fetch('mein mongodb', {
+    await fetch('/api/entries', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

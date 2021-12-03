@@ -22,7 +22,7 @@ function WelcomePage(): JSX.Element {
           maxLength={12}
           onChange={(event) => setName(event.target.value)}
         ></input>
-        <Button className={''} type={'submit'} value={'enter'} />
+        <Button type={'submit'} name={'enter'} />
       </form>
     </div>
   );
