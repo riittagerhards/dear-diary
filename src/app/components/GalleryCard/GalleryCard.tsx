@@ -9,7 +9,7 @@ function GalleryCard({ date, src }: GalleryCardProps): JSX.Element {
   const months = [
     'JAN',
     'FEB',
-    'MRZ',
+    'MAR',
     'APR',
     'MAY',
     'JUN',
@@ -18,7 +18,7 @@ function GalleryCard({ date, src }: GalleryCardProps): JSX.Element {
     'SEP',
     'OCT',
     'NOV',
-    'DEZ',
+    'DEC',
   ];
 
   return (
