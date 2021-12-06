@@ -1,0 +1,9 @@
+.select {
+  background-color: var(--color-effect);
+  width: 10rem;
+  height: 1.5rem;
+  color: var(--color-text-effect);
+  text-align: center;
+  border: none;
+  border-radius: var(--border-radius-button);
+}
