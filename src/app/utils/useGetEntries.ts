@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
-type Entry = {
-  id: string;
+export type Entry = {
   imageUrl: string;
   date: string;
   title: string;
