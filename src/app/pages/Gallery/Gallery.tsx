@@ -14,7 +14,7 @@ function Gallery(): JSX.Element {
         )}
         {entries?.map((entry) => (
           <GalleryCard
-            key={entry.id}
+            key={entry.date}
             date={new Date(entry.date)}
             src={entry.imageUrl}
           />

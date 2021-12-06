@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 type Entry = {
-  id: number;
+  id: string;
   imageUrl: string;
   date: string;
   title: string;
