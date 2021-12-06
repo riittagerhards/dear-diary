@@ -2,11 +2,12 @@ import Navigation from '../../components/Navigation/Navigation';
 import GalleryCard from '../../components/GalleryCard/GalleryCard';
 import useGetEntries from '../../utils/useGetEntries';
 import styles from './Gallery.module.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function Gallery(): JSX.Element {
   const entries = useGetEntries();
-  const [selectDate, setSelectDate] = useState([]);
+  const [selectDate, setSelectDate] = useState('');
+  const [dateOptions, setDateOptions] = useState<string[] | null>(null);
 
   const months = [
     'January',
@@ -23,29 +24,31 @@ function Gallery(): JSX.Element {
     'December',
   ];
 
-  const handleChange = (event) => {
-    setSelectDate(event.target.value);
-  };
-
-  const dateOptions = entries?.map((entry) => {
-    const newDate = new Date(entry.date);
-    return (
-      <option key={entry.date}>
-        {months[newDate.getMonth()]} {newDate.getFullYear()}
-      </option>
-    );
-  });
+  useEffect(() => {
+    if (!entries) {
+      return;
+    }
+    const formattedDateOptions = entries.map((entry) => {
+      const date = new Date(entry.date);
+      return `${months[date.getMonth()]} ${date.getFullYear()}`;
+    });
+    const uniqueDateOptions = [...new Set(formattedDateOptions)];
+    setDateOptions(uniqueDateOptions);
+  }, [entries]);
 
   return (
     <div className={styles.container}>
       <Navigation headerTitle={'Gallery'} />
       <select
         className={styles.select}
-        onChange={handleChange}
+        onChange={(event) => setSelectDate(event.target.value)}
         value={selectDate}
       >
         <option>Select Month</option>
-        {dateOptions}
+        {dateOptions &&
+          dateOptions.map((entry) => {
+            return <option key={entry}>{entry}</option>;
+          })}
       </select>
       <div>
         {entries?.length === 0 && (
