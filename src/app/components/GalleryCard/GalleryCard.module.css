@@ -1,0 +1,36 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background-color: var(--color-primary);
+  width: 85vw;
+  height: 25vh;
+  overflow: hidden;
+  margin: 1.5rem;
+  place-items: center;
+  align-items: center;
+  border-radius: var(--border-radius-card);
+}
+
+.dateContainer {
+  display: grid;
+  place-items: center;
+  align-content: center;
+}
+
+.dateDay {
+  color: var(--color-text-effect);
+  font-size: 3rem;
+  margin: 0;
+}
+
+.dateMonth {
+  color: var(--color-text-effect);
+  margin: 0;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}

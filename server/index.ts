@@ -18,7 +18,7 @@ app.get('/api/hello', (_request, response) => {
 
 app.get('/api/entries', async (_request, response) => {
   const entryCollection = getEntryCollection();
-  const entries = entryCollection.find();
+  const entries = entryCollection.find().sort({ date: -1 });
   const allEntries = await entries.toArray();
   response.send(allEntries);
 });
