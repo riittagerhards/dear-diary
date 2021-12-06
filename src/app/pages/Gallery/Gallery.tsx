@@ -8,13 +8,33 @@ function Gallery(): JSX.Element {
   const entries = useGetEntries();
   const [selectDate, setSelectDate] = useState([]);
 
+  const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+
   const handleChange = (event) => {
     setSelectDate(event.target.value);
   };
 
-  const dateOptions = entries?.map((entry) => (
-    <option key={entry.date}>{entry.date}</option>
-  ));
+  const dateOptions = entries?.map((entry) => {
+    const newDate = new Date(entry.date);
+    return (
+      <option key={entry.date}>
+        {months[newDate.getMonth()]} {newDate.getFullYear()}
+      </option>
+    );
+  });
 
   return (
     <div className={styles.container}>
