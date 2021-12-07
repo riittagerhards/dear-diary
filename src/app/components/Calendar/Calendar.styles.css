@@ -1,0 +1,16 @@
+.calendar {
+  background-color: var(--color-primary);
+}
+
+.today {
+  color: var(--color-text-effect) !important;
+  border: 2px solid var(--color-text-effect) !important;
+}
+
+.today::after {
+  visibility: hidden;
+}
+
+.today:hover {
+  background-color: var(--color-effect) !important;
+}
