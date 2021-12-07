@@ -1,0 +1,37 @@
+.container {
+  display: grid;
+  place-content: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.navigation {
+  z-index: 10;
+}
+
+.dateContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background-color: var(--color-primary);
+  margin: 1.5rem 1rem 0;
+  height: 6em;
+  border-radius: var(--border-radius-card);
+  padding: 1rem;
+}
+
+.date {
+  justify-self: start;
+  color: var(--color-text-effect);
+  font-size: 2rem;
+}
+
+.icon {
+  justify-self: end;
+}
+
+.calendar {
+  margin: 1rem;
+  overflow: hidden;
+  z-index: 0;
+}
