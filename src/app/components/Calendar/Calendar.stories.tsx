@@ -8,4 +8,4 @@ export default {
   },
 };
 
-export const Default = (): JSX.Element => <CalendarSummary />;
+export const Default = (): JSX.Element => <CalendarSummary className={''} />;
