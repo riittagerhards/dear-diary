@@ -1,11 +1,9 @@
 import WelcomePageIcon from '../../components/Welcome/WelcomePageIcon.svg';
-import { FormEvent, useState } from 'react';
+import { FormEvent } from 'react';
 import styles from './WelcomePage.module.css';
 import Button from '../../components/Button/Button';
 
 function WelcomePage(): JSX.Element {
-  const [name, setName] = useState('');
-
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
   }
@@ -18,9 +16,8 @@ function WelcomePage(): JSX.Element {
           className={styles.textInput}
           type="text"
           placeholder="my name"
-          value={name}
           maxLength={12}
-          onChange={(event) => setName(event.target.value)}
+          onChange={(event) => localStorage.setItem('name', event.target.value)}
         ></input>
         <Button type={'submit'} name={'enter'} />
       </form>

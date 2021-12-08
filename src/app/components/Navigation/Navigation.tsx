@@ -3,6 +3,7 @@ import styles from './Navigation.module.css';
 
 type headerTitleProps = {
   headerTitle: string;
+  className?: string;
 };
 
 function Navigation({ headerTitle }: headerTitleProps): JSX.Element {

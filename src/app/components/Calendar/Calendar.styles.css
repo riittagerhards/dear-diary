@@ -1,0 +1,25 @@
+.calendar {
+  background-color: var(--color-primary);
+  width: 100vw;
+  border-radius: var(--border-radius-card);
+  margin: 0;
+}
+
+.Calendar__weekDay {
+  color: var(--color-secondary);
+  font-size: 0.8rem;
+  background-color: var(--color-background);
+}
+
+.today::after {
+  visibility: hidden;
+}
+
+.today:hover {
+  background-color: var(--color-effect) !important;
+}
+
+.highlightedDays {
+  border: 2px solid var(--color-effect) !important;
+  color: var(--color-text-effect) !important;
+}
