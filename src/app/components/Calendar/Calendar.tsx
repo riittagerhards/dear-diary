@@ -32,7 +32,7 @@ function CalendarSummary({ className }: CalendarProps): JSX.Element {
         calendarClassName="calendar"
         calendarTodayClassName="today"
         minimumDate={minimumDate}
-        customDaysClassName={selectedDates}
+        customDaysClassName={entries ? selectedDates : []}
       />
     </div>
   );
