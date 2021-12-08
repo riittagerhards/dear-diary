@@ -6,7 +6,7 @@ import styles from './Home.module.css';
 function HomePage(): JSX.Element {
   const name = localStorage.getItem('name');
 
-  const months = [
+  const MONTHS = [
     'JAN',
     'FEB',
     'MAR',
@@ -23,7 +23,7 @@ function HomePage(): JSX.Element {
 
   const date = new Date();
   const day = date.getDate();
-  const month = months[date.getMonth()];
+  const month = MONTHS[date.getMonth()];
 
   return (
     <div className={styles.container}>
