@@ -22,10 +22,10 @@ function SingleEntry({
         <img className={styles.image} src={src} alt="my picture of the day" />
         <h1>{entryTitle}</h1>
         <p className={styles.text}>{text}</p>
-        <label className={styles.buttonContainer}>
+        <div className={styles.buttonContainer}>
           <Button type={'button'} name={'edit'} />
           <Button type={'submit'} name={'delete'} />
-        </label>
+        </div>
       </div>
     </div>
   );
