@@ -34,14 +34,10 @@ function Navigation({ headerTitle }: headerTitleProps): JSX.Element {
           </Link>
         </li>
         <li>
-          <a className={styles.inactiveLink} href="">
-            Profile
-          </a>
+          <a className={styles.inactiveLink}>Profile</a>
         </li>
         <li>
-          <a className={styles.inactiveLink} href="">
-            Settings
-          </a>
+          <a className={styles.inactiveLink}>Settings</a>
         </li>
       </ul>
       <div className={styles.burger} onClick={handleClick}>
