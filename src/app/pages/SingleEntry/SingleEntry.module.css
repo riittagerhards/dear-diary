@@ -1,0 +1,23 @@
+.container {
+  display: grid;
+  margin: 1.5rem 1rem;
+  text-align: center;
+}
+
+.image {
+  height: 90%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius-card);
+}
+
+.text {
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
