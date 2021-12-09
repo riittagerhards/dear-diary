@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Navigation from '../../components/Navigation/Navigation';
 import CalendarSummary from '../../components/Calendar/Calendar';
 import AddNewEntryIcon from './AddNewEntryIcon.svg';
@@ -35,7 +36,9 @@ function HomePage(): JSX.Element {
         <div className={styles.date}>
           {day} {month}
         </div>
-        <img src={AddNewEntryIcon} className={styles.icon} />
+        <Link to="/add" className={styles.icon}>
+          <img src={AddNewEntryIcon} />
+        </Link>
       </section>
       <CalendarSummary className={styles.calendar} />
     </div>

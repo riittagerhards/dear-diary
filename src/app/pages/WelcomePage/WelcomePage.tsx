@@ -1,5 +1,6 @@
 import WelcomePageIcon from '../../components/Welcome/WelcomePageIcon.svg';
 import { FormEvent } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './WelcomePage.module.css';
 import Button from '../../components/Button/Button';
 
@@ -19,7 +20,9 @@ function WelcomePage(): JSX.Element {
           maxLength={12}
           onChange={(event) => localStorage.setItem('name', event.target.value)}
         ></input>
-        <Button type={'submit'} name={'enter'} />
+        <Link to={'/home'}>
+          <Button type={'submit'} name={'enter'} />
+        </Link>
       </form>
     </div>
   );
