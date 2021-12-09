@@ -1,19 +1,20 @@
-import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import WelcomePage from './app/pages/WelcomePage/WelcomePage';
+import HomePage from './app/pages/Home/Home';
+import AddEntry from './app/pages/AddEntry/AddEntry';
+import Gallery from './app/pages/Gallery/Gallery';
+//import SingleEntry from './app/pages/SingleEntry/SingleEntry';
 
 function App(): JSX.Element {
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    fetch('/api/hello')
-      .then((response) => response.json())
-      .then((result) => setMessage(result.message));
-  }, []);
-
   return (
     <div>
-      <p>Hello</p>
-      <p>{message}</p>
+      <Routes>
+        <Route path="/" element={<WelcomePage />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/add" element={<AddEntry />} />
+        <Route path="/gallery" element={<Gallery />} />
+      </Routes>
     </div>
   );
 }
