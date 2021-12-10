@@ -40,13 +40,7 @@ function SingleEntry(): JSX.Element {
     <div>
       {entry && <Navigation headerTitle={getDate(entry.date)} />}
       <div className={styles.container}>
-        {entry && (
-          <img
-            className={styles.image}
-            src={entry.imageUrl}
-            alt="my picture of the day"
-          />
-        )}
+        {entry && <img className={styles.image} src={entry.imageUrl} alt="" />}
         {entry && <h1>{entry.title}</h1>}
         {entry && <p className={styles.text}>{entry.text}</p>}
         <div className={styles.buttonContainer}>
