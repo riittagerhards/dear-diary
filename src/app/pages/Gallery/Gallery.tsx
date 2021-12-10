@@ -58,7 +58,7 @@ function Gallery(): JSX.Element {
         {entries?.map((entry) => (
           <Link
             key={entry.date}
-            to={`/popular/${entry.date}`}
+            to={`/gallery/${entry.date}`}
             style={{ textDecoration: 'none' }}
           >
             <GalleryCard date={new Date(entry.date)} src={entry.imageUrl} />

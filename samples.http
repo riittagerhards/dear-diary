@@ -1,6 +1,9 @@
 ### GET all entries
 GET http://localhost:3001/api/entries HTTP/1.1
 
+### GET one entry
+GET http://localhost:3001/api/entries/2021-11-06 HTTP/1.1
+
 ###POST an entry
 POST http://localhost:3001/api/entries HTTP/1.1
 Content-Type: application/json
