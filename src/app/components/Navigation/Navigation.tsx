@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Navigation.module.css';
 
 type headerTitleProps = {
@@ -18,29 +19,25 @@ function Navigation({ headerTitle }: headerTitleProps): JSX.Element {
       <h1 className={styles.headerTitle}>{headerTitle}</h1>
       <ul className={`${styles.navLinks} ${navOpen ? styles.navOpen : ''} `}>
         <li>
-          <a className={styles.activeLink} href="">
+          <Link className={styles.activeLink} to="/home">
             Home
-          </a>
+          </Link>
         </li>
         <li>
-          <a className={styles.activeLink} href="">
+          <Link className={styles.activeLink} to="/add">
             Add entry
-          </a>
+          </Link>
         </li>
         <li>
-          <a className={styles.activeLink} href="">
+          <Link className={styles.activeLink} to="/gallery">
             Gallery
-          </a>
+          </Link>
         </li>
         <li>
-          <a className={styles.inactiveLink} href="">
-            Profile
-          </a>
+          <a className={styles.inactiveLink}>Profile</a>
         </li>
         <li>
-          <a className={styles.inactiveLink} href="">
-            Settings
-          </a>
+          <a className={styles.inactiveLink}>Settings</a>
         </li>
       </ul>
       <div className={styles.burger} onClick={handleClick}>

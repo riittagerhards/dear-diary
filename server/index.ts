@@ -16,12 +16,31 @@ app.get('/api/hello', (_request, response) => {
   response.json({ message: 'Hello from server' });
 });
 
+//get all entries
+
 app.get('/api/entries', async (_request, response) => {
   const entryCollection = getEntryCollection();
   const entries = entryCollection.find().sort({ date: -1 });
   const allEntries = await entries.toArray();
   response.send(allEntries);
 });
+
+//get one entry by date
+
+app.get('/api/entries/:date', async (request, response) => {
+  const entryCollection = getEntryCollection();
+  const entry = request.params.date;
+  const entryRequest = await entryCollection.findOne({
+    date: entry,
+  });
+  if (!entryRequest) {
+    response.status(400).send('No entry for this day');
+  } else {
+    response.send(entryRequest);
+  }
+});
+
+//add a new entry
 
 app.post('/api/entries', async (request, response) => {
   const newEntry = request.body;

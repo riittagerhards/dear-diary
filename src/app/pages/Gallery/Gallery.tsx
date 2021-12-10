@@ -3,6 +3,7 @@ import GalleryCard from '../../components/GalleryCard/GalleryCard';
 import useGetEntries from '../../utils/useGetEntries';
 import styles from './Gallery.module.css';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Gallery(): JSX.Element {
   const entries = useGetEntries();
@@ -55,11 +56,13 @@ function Gallery(): JSX.Element {
           <span>I&apos;m sorry, nothing to show here</span>
         )}
         {entries?.map((entry) => (
-          <GalleryCard
+          <Link
             key={entry.date}
-            date={new Date(entry.date)}
-            src={entry.imageUrl}
-          />
+            to={`/gallery/${entry.date}`}
+            style={{ textDecoration: 'none' }}
+          >
+            <GalleryCard date={new Date(entry.date)} src={entry.imageUrl} />
+          </Link>
         ))}
       </div>
     </div>
