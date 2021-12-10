@@ -17,6 +17,7 @@
   margin: auto;
   width: 10rem;
   gap: 0.5rem;
+  place-items: center;
 }
 
 .textInput {

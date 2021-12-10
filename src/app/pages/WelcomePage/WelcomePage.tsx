@@ -16,12 +16,12 @@ function WelcomePage(): JSX.Element {
         <input
           className={styles.textInput}
           type="text"
-          placeholder="my name"
+          placeholder="My name"
           maxLength={12}
           onChange={(event) => localStorage.setItem('name', event.target.value)}
         ></input>
         <Link to={'/home'}>
-          <Button type={'submit'} name={'enter'} />
+          <Button type={'submit'} name={'Enter'} />
         </Link>
       </form>
     </div>

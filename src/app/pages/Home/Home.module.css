@@ -2,7 +2,7 @@
   display: grid;
   place-content: center;
   overflow: hidden;
-  width: 100%;
+  box-shadow: none;
 }
 
 .navigation {
@@ -15,7 +15,8 @@
   align-items: center;
   background-color: var(--color-primary);
   margin: 1.5rem 1rem 0;
-  height: 6em;
+  height: 10rem;
+  width: 90%;
   border-radius: var(--border-radius-card);
   padding: 1rem;
 }
@@ -34,4 +35,5 @@
   margin: 1rem;
   overflow: hidden;
   z-index: 0;
+  width: 100%;
 }
