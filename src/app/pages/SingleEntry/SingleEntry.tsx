@@ -13,7 +13,7 @@ type SingleEntryProps = {
 
 function SingleEntry(): JSX.Element {
   const { date } = useParams();
-  const [entry, setEntry] = useState<SingleEntryProps>('');
+  const [entry, setEntry] = useState<SingleEntryProps | null>();
 
   const getEntries = async () => {
     const response = await fetch(`/api/entries/${date}/`);
@@ -25,17 +25,20 @@ function SingleEntry(): JSX.Element {
     getEntries();
   }, []);
 
-  const dateObject = new Date(entry.date);
-  const options: Intl.DateTimeFormatOptions = {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
+  const getDate = (dateString: string) => {
+    const dateObject = new Date(dateString);
+    const options: Intl.DateTimeFormatOptions = {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+    };
+    const entryDate = dateObject.toLocaleDateString('en-US', options);
+    return entryDate;
   };
-  const entryDate = dateObject.toLocaleDateString('en-US', options);
 
   return (
     <div>
-      {entry && <Navigation headerTitle={entryDate} />}
+      {entry && <Navigation headerTitle={getDate(entry.date)} />}
       <div className={styles.container}>
         {entry && (
           <img
