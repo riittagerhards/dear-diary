@@ -16,7 +16,7 @@ function SingleEntry(): JSX.Element {
   const [entry, setEntry] = useState<SingleEntryProps | null>();
 
   const getEntries = async () => {
-    const response = await fetch(`/api/entries/${date}/`);
+    const response = await fetch(`/api/entries/${date}`);
     const entry = await response.json();
     setEntry(entry);
   };
