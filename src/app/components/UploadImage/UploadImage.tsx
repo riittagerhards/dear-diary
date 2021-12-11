@@ -1,5 +1,5 @@
 import styles from './UploadImage.module.css';
-import UploadImageIcon from '../../components/UploadImage/UploadImageIcon.svg';
+import UploadImageIcon from '../../components/UploadImage/UploadImageIcon';
 import { ChangeEvent } from 'react';
 
 type ImageUploadProps = {
@@ -27,7 +27,7 @@ function UploadImage({ onUpload }: ImageUploadProps): JSX.Element {
 
   return (
     <label className={styles.container}>
-      <img src={UploadImageIcon} />
+      <UploadImageIcon />
       <input
         type="file"
         className={styles.imageUpload}

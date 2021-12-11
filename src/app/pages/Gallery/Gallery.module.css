@@ -4,7 +4,7 @@
 }
 
 .select {
-  background-color: var(--color-effect);
+  background-color: var(--color-secondary);
   width: 10rem;
   height: 1.5rem;
   color: var(--color-text-effect);

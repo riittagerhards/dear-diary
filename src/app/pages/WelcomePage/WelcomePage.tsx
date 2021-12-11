@@ -1,4 +1,4 @@
-import WelcomePageIcon from '../../components/Welcome/WelcomePageIcon.svg';
+import WelcomePageIcon from '../../components/Welcome/WelcomePageIcon';
 import { FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './WelcomePage.module.css';
@@ -11,7 +11,7 @@ function WelcomePage(): JSX.Element {
 
   return (
     <div className={styles.container}>
-      <img className={styles.icon} src={WelcomePageIcon} alt="dear diary" />
+      <WelcomePageIcon className={styles.icon} />
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
           className={styles.textInput}
