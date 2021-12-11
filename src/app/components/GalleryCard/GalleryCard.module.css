@@ -2,10 +2,9 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   background-color: var(--color-primary);
-  width: 85vw;
   height: 25vh;
   overflow: hidden;
-  margin: 1.5rem;
+  margin: 1rem;
   place-items: center;
   align-items: center;
   border-radius: var(--border-radius-card);

@@ -1,7 +1,7 @@
 .container {
   display: grid;
   align-content: space-between;
-  padding: 1.5em 0 2em;
+  padding: 1.5rem 0 0.6rem;
   background-image: url('../../components/Welcome/WelcomePageBackground.jpg');
   background-size: cover;
   height: 100vh;
@@ -16,7 +16,8 @@
   display: grid;
   margin: auto;
   width: 10rem;
-  gap: 0.5rem;
+  gap: 0.3rem;
+  place-items: center;
 }
 
 .textInput {

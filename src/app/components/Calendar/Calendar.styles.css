@@ -11,12 +11,16 @@
   background-color: var(--color-background);
 }
 
-.today::after {
-  visibility: hidden;
+.Calendar__day {
+  color: var(--color-text-effect);
 }
 
-.today:hover {
-  background-color: var(--color-effect) !important;
+.Calendar__day.-today:not(.-selectedStart):not(.-selectedEnd):not(.-selectedBetween) {
+  color: var(--color-text-effect);
+}
+
+.today::after {
+  visibility: hidden;
 }
 
 .highlightedDays {

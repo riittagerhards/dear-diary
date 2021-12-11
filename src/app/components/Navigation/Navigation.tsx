@@ -19,25 +19,19 @@ function Navigation({ headerTitle }: headerTitleProps): JSX.Element {
       <h1 className={styles.headerTitle}>{headerTitle}</h1>
       <ul className={`${styles.navLinks} ${navOpen ? styles.navOpen : ''} `}>
         <li>
-          <Link className={styles.activeLink} to="/home">
+          <Link className={styles.link} to="/home">
             Home
           </Link>
         </li>
         <li>
-          <Link className={styles.activeLink} to="/add">
+          <Link className={styles.link} to="/add">
             Add entry
           </Link>
         </li>
         <li>
-          <Link className={styles.activeLink} to="/gallery">
+          <Link className={styles.link} to="/gallery">
             Gallery
           </Link>
-        </li>
-        <li>
-          <a className={styles.inactiveLink}>Profile</a>
-        </li>
-        <li>
-          <a className={styles.inactiveLink}>Settings</a>
         </li>
       </ul>
       <div className={styles.burger} onClick={handleClick}>

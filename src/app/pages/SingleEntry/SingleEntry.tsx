@@ -44,8 +44,8 @@ function SingleEntry(): JSX.Element {
         {entry && <h1>{entry.title}</h1>}
         {entry && <p className={styles.text}>{entry.text}</p>}
         <div className={styles.buttonContainer}>
-          <Button type={'button'} name={'edit'} />
-          <Button type={'submit'} name={'delete'} />
+          <Button type={'button'} name={'Edit'} />
+          <Button type={'submit'} name={'Delete'} />
         </div>
       </div>
     </div>

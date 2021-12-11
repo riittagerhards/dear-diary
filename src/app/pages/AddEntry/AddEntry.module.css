@@ -3,10 +3,10 @@
 }
 
 .form {
-  margin: 1.5rem;
-  height: 75vh;
+  margin: 1.5rem 1rem;
+  height: 80vh;
   display: grid;
-  grid-template-rows: 12rem 1fr 1.5rem 2fr 1.5rem;
+  grid-template-rows: 12rem 1fr 1.5rem 12rem 1.5rem;
   gap: 1rem;
 }
 
@@ -23,16 +23,28 @@
   border: none;
 }
 
+.titleInput::placeholder {
+  color: var(--color-text);
+}
+
 .textInput {
   background-color: var(--color-primary);
-  color: var(--color-text-effect);
   border: none;
   border-radius: var(--border-radius-card);
   text-align: center;
+  font-size: 1rem;
+  font-family: var(--font-text);
+  color: var(--color-text-effect);
+  padding: 1rem;
+}
+
+.textInput::placeholder {
+  font-family: var(--font-text);
+  color: var(--color-text-effect);
 }
 
 .dateInput {
-  font-size: 0.8rem;
+  font-size: 1rem;
   border: solid var(--color-primary) 0.1rem;
   border-radius: var(--border-radius-button);
   font-family: var(--font-text);
@@ -41,8 +53,4 @@
 
 input.textInput::placeholder {
   color: var(--color-text-effect);
-}
-
-.button {
-  width: 4.5rem;
 }

@@ -57,15 +57,15 @@ function AddEntry(): JSX.Element {
           onChange={(event) => setDate(event.target.value)}
           required
         />
-        <input
+        <textarea
           className={styles.textInput}
-          type="text"
           placeholder="Place for your text"
           maxLength={250}
+          rows={7}
           value={text}
           onChange={(event) => setText(event.target.value)}
         />
-        <Button className={styles.button} type={'submit'} name={'save'} />
+        <Button className={styles.button} type={'submit'} name={'Save'} />
       </form>
     </div>
   );
