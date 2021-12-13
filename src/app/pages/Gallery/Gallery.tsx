@@ -10,7 +10,7 @@ function Gallery(): JSX.Element {
   const [selectDate, setSelectDate] = useState('');
   const [dateOptions, setDateOptions] = useState<string[] | null>(null);
 
-  const months = [
+  const monthsLong = [
     'January',
     'February',
     'March',
@@ -25,17 +25,41 @@ function Gallery(): JSX.Element {
     'December',
   ];
 
+  const monthsTwoDigit = [
+    '01',
+    '02',
+    '03',
+    '04',
+    '05',
+    '06',
+    '07',
+    '08',
+    '09',
+    '10',
+    '11',
+    '12',
+  ];
+
   useEffect(() => {
     if (!entries) {
       return;
     }
     const formattedDateOptions = entries.map((entry) => {
       const date = new Date(entry.date);
-      return `${months[date.getMonth()]} ${date.getFullYear()}`;
+      return `${monthsLong[date.getMonth()]} ${date.getFullYear()}`;
     });
     const uniqueDateOptions = [...new Set(formattedDateOptions)];
     setDateOptions(uniqueDateOptions);
   }, [entries]);
+
+  const formattedDate = new Date(selectDate);
+  const filterDate = `${formattedDate.getFullYear()}-${
+    monthsTwoDigit[formattedDate.getMonth()]
+  }`;
+
+  const filteredEntries = entries?.filter((entry) =>
+    entry.date.startsWith(filterDate)
+  );
 
   return (
     <div className={styles.container}>
@@ -55,15 +79,30 @@ function Gallery(): JSX.Element {
         {entries?.length === 0 && (
           <span>I&apos;m sorry, nothing to show here</span>
         )}
-        {entries?.map((entry) => (
-          <Link
-            key={entry.date}
-            to={`/gallery/${entry.date}`}
-            style={{ textDecoration: 'none' }}
-          >
-            <GalleryCard date={new Date(entry.date)} src={entry.imageUrl} />
-          </Link>
-        ))}
+        {!selectDate &&
+          entries?.map((entry) => (
+            <Link
+              key={entry.date}
+              to={`/gallery/${entry.date}`}
+              style={{ textDecoration: 'none' }}
+            >
+              <GalleryCard date={new Date(entry.date)} src={entry.imageUrl} />
+            </Link>
+          ))}
+        {selectDate &&
+          filteredEntries?.map((entry) => (
+            <Link
+              key={entry.date}
+              to={`/gallery/${entry.date}`}
+              style={{ textDecoration: 'none' }}
+            >
+              <GalleryCard
+                key={entry.date}
+                date={new Date(entry.date)}
+                src={entry.imageUrl}
+              />
+            </Link>
+          ))}
       </div>
     </div>
   );
