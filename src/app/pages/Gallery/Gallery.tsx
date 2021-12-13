@@ -64,17 +64,22 @@ function Gallery(): JSX.Element {
   return (
     <div className={styles.container}>
       <Navigation headerTitle={'Gallery'} />
-      <select
-        className={styles.select}
-        onChange={(event) => setSelectDate(event.target.value)}
-        value={selectDate}
-      >
-        <option>Select Month</option>
-        {dateOptions &&
-          dateOptions.map((entry) => {
-            return <option key={entry}>{entry}</option>;
-          })}
-      </select>
+      <div className={styles.selectContainer}>
+        <select
+          className={styles.select}
+          onChange={(event) => setSelectDate(event.target.value)}
+          value={selectDate}
+        >
+          <option>Select Month</option>
+          {dateOptions &&
+            dateOptions.map((entry) => {
+              return <option key={entry}>{entry}</option>;
+            })}
+        </select>
+        <div className={styles.showAll} onClick={() => setSelectDate('')}>
+          Show all
+        </div>
+      </div>
       <div>
         {entries?.length === 0 && (
           <span>I&apos;m sorry, nothing to show here</span>
