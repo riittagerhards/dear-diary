@@ -19,8 +19,18 @@
   text-align: justify;
 }
 
-.buttonContainer {
-  display: flex;
-  gap: 0.8rem;
-  justify-content: center;
+.delete {
+  background-color: var(--color-secondary);
+  height: 1.5rem;
+  color: var(--color-text-effect);
+  border-radius: var(--border-radius-button);
+}
+
+.delete:hover {
+  background-color: var(--color-effect);
+}
+
+.delete:active {
+  background-color: var(--color-effect);
+  transform: translateY(3px);
 }

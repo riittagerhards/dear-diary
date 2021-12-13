@@ -60,6 +60,19 @@ app.post('/api/entries', async (request, response) => {
   }
 });
 
+//delete an entry by date
+
+app.delete('/api/entries/:date', async (request, response) => {
+  const entries = getEntryCollection();
+  const entry = request.params.date;
+  try {
+    entries.deleteOne({ date: entry });
+    response.send('Delete succesfull');
+  } catch (error) {
+    response.send(error);
+  }
+});
+
 // Serve production bundle
 app.use(express.static('dist'));
 

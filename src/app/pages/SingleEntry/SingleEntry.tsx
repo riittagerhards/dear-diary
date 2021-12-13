@@ -1,7 +1,7 @@
 import styles from './SingleEntry.module.css';
 import Navigation from '../../components/Navigation/Navigation';
-import Button from '../../components/Button/Button';
-import { useParams } from 'react-router-dom';
+import useDeleteEntry from '../../utils/useDeleteEntry';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 type SingleEntryProps = {
@@ -36,6 +36,16 @@ function SingleEntry(): JSX.Element {
     return entryDate;
   };
 
+  const navigate = useNavigate();
+  const params = useParams();
+  const deleteDate = params.date;
+  const deleteEntry = useDeleteEntry(deleteDate);
+
+  async function handleClick() {
+    await deleteEntry();
+    navigate('/gallery');
+  }
+
   return (
     <div>
       {entry && <Navigation headerTitle={getDate(entry.date)} />}
@@ -43,9 +53,8 @@ function SingleEntry(): JSX.Element {
         {entry && <img className={styles.image} src={entry.imageUrl} alt="" />}
         {entry && <h1>{entry.title}</h1>}
         {entry && <p className={styles.text}>{entry.text}</p>}
-        <div className={styles.buttonContainer}>
-          <Button type={'button'} name={'Edit'} />
-          <Button type={'submit'} name={'Delete'} />
+        <div className={styles.delete} onClick={() => handleClick()}>
+          delete
         </div>
       </div>
     </div>
