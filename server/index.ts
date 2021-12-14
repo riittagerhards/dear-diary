@@ -12,10 +12,6 @@ const port = process.env.PORT || 3001;
 const app = express();
 app.use(express.json());
 
-app.get('/api/hello', (_request, response) => {
-  response.json({ message: 'Hello from server' });
-});
-
 //get all entries
 
 app.get('/api/entries', async (_request, response) => {
@@ -29,14 +25,14 @@ app.get('/api/entries', async (_request, response) => {
 
 app.get('/api/entries/:date', async (request, response) => {
   const entryCollection = getEntryCollection();
-  const entry = request.params.date;
-  const entryRequest = await entryCollection.findOne({
-    date: entry,
+  const date = request.params.date;
+  const entry = await entryCollection.findOne({
+    date: date,
   });
-  if (!entryRequest) {
-    response.status(400).send('No entry for this day');
+  if (!entry) {
+    response.status(404).send('No entry for this day');
   } else {
-    response.send(entryRequest);
+    response.send(entry);
   }
 });
 
