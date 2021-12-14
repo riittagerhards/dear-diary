@@ -13,11 +13,10 @@
 }
 
 .form {
-  display: grid;
-  margin: auto;
-  width: 10rem;
-  gap: 0.3rem;
-  place-items: center;
+  display: flex;
+  margin: 1rem;
+  gap: 0.5rem;
+  place-content: center;
 }
 
 .textInput {
