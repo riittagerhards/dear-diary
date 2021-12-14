@@ -3,14 +3,32 @@
   justify-content: center;
 }
 
+.selectContainer {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 0.5rem;
+  margin: 0 1rem;
+  margin-top: 1rem;
+}
+
 .select {
   background-color: var(--color-secondary);
-  width: 10rem;
+  width: 100%;
   height: 1.5rem;
   color: var(--color-text-effect);
+  font-size: 1rem;
   text-align: center;
   border: none;
   border-radius: var(--border-radius-button);
-  margin-top: 1rem;
-  justify-self: center;
+  align-content: center;
+}
+
+.showAll {
+  background-color: var(--color-secondary);
+  text-align: center;
+  color: var(--color-text-effect);
+  height: 1.5rem;
+  font-size: 1rem;
+  border-radius: var(--border-radius-button);
+  align-content: center;
 }
