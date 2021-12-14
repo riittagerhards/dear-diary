@@ -12,11 +12,13 @@
   margin: auto;
 }
 
-.form {
-  display: flex;
-  margin: 1rem;
+.inputContainer {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 1rem;
+  width: 80%;
+  place-self: center;
   gap: 0.5rem;
-  place-content: center;
 }
 
 .textInput {
@@ -25,4 +27,25 @@
   font-size: 1rem;
   border: none;
   border-radius: var(--border-radius-button);
+}
+
+.enter {
+  background-color: var(--color-secondary);
+  border: none;
+  text-align: center;
+  color: var(--color-text-effect);
+  height: 1.5rem;
+  width: 4rem;
+  font-size: 1rem;
+  border-radius: var(--border-radius-button);
+  text-decoration: none;
+}
+
+.enter:hover {
+  background-color: var(--color-effect);
+}
+
+.enter:active {
+  background-color: var(--color-effect);
+  transform: translateY(3px);
 }
