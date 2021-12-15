@@ -61,11 +61,11 @@ app.post('/api/entries', async (request, response) => {
 app.delete('/api/entries/:date', async (request, response) => {
   const entries = getEntryCollection();
   const entry = request.params.date;
-  try {
-    entries.deleteOne({ date: entry });
+  const deleteResult = await entries.deleteOne({ date: entry });
+  if (deleteResult.deletedCount) {
     response.send('Delete succesfull');
-  } catch (error) {
-    response.send(error);
+  } else {
+    response.status(404).send();
   }
 });
 
