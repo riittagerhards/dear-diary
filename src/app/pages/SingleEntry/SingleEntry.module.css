@@ -34,3 +34,21 @@
   background-color: var(--color-effect);
   transform: translateY(3px);
 }
+
+.empty {
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius-card);
+  display: grid;
+  grid-template-rows: 2fr 1fr 1fr;
+  height: 65vh;
+  margin: 3rem 1rem;
+  padding: 1rem;
+  text-align: center;
+  color: var(--color-text-effect);
+  font-size: 1rem;
+}
+
+.link {
+  color: var(--color-text-effect);
+  text-decoration: underline;
+}
