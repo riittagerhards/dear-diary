@@ -42,7 +42,11 @@ function SingleEntry(): JSX.Element {
   const deleteEntry = useDeleteEntry(deleteDate);
 
   async function handleClick() {
-    await deleteEntry();
+    try {
+      await deleteEntry();
+    } catch (error) {
+      console.log(error);
+    }
     navigate('/gallery');
   }
 
