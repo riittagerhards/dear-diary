@@ -17,7 +17,8 @@
   height: 1.5rem;
   color: var(--color-text-effect);
   font-size: 1rem;
-  text-align: center;
+  text-align: left;
+  padding-left: 0.8rem;
   border: none;
   border-radius: var(--border-radius-button);
   align-content: center;

@@ -4,41 +4,12 @@ import useGetEntries from '../../utils/useGetEntries';
 import styles from './Gallery.module.css';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { monthsLong, monthsTwoDigit } from '../../utils/dateData';
 
 function Gallery(): JSX.Element {
   const entries = useGetEntries();
   const [selectDate, setSelectDate] = useState('');
   const [dateOptions, setDateOptions] = useState<string[] | null>(null);
-
-  const monthsLong = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
-
-  const monthsTwoDigit = [
-    '01',
-    '02',
-    '03',
-    '04',
-    '05',
-    '06',
-    '07',
-    '08',
-    '09',
-    '10',
-    '11',
-    '12',
-  ];
 
   useEffect(() => {
     if (!entries) {
@@ -71,10 +42,9 @@ function Gallery(): JSX.Element {
           value={selectDate}
         >
           <option>Select Month</option>
-          {dateOptions &&
-            dateOptions.map((entry) => {
-              return <option key={entry}>{entry}</option>;
-            })}
+          {dateOptions?.map((entry) => {
+            return <option key={entry}>{entry}</option>;
+          })}
         </select>
         <div className={styles.showAll} onClick={() => setSelectDate('')}>
           Show all
@@ -86,21 +56,13 @@ function Gallery(): JSX.Element {
         )}
         {!selectDate &&
           entries?.map((entry) => (
-            <Link
-              key={entry.date}
-              to={`/gallery/${entry.date}`}
-              style={{ textDecoration: 'none' }}
-            >
+            <Link key={entry.date} to={`/gallery/${entry.date}`}>
               <GalleryCard date={new Date(entry.date)} src={entry.imageUrl} />
             </Link>
           ))}
         {selectDate &&
           filteredEntries?.map((entry) => (
-            <Link
-              key={entry.date}
-              to={`/gallery/${entry.date}`}
-              style={{ textDecoration: 'none' }}
-            >
+            <Link key={entry.date} to={`/gallery/${entry.date}`}>
               <GalleryCard
                 key={entry.date}
                 date={new Date(entry.date)}

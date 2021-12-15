@@ -13,9 +13,11 @@ function UploadImage({ onUpload }: ImageUploadProps): JSX.Element {
     }
     const file = event.target.files[0];
 
+    const key = import.meta.env.VITE_CLOUDINARY_UPLOAD as string;
+
     const formData = new FormData();
     formData.append('file', file);
-    formData.append('upload_preset', 'bmnorbj6');
+    formData.append('upload_preset', key);
 
     fetch('https://api.cloudinary.com/v1_1/rger/image/upload', {
       method: 'POST',

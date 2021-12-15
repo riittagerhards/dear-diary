@@ -1,7 +1,8 @@
 import styles from './SingleEntry.module.css';
 import Navigation from '../../components/Navigation/Navigation';
 import useDeleteEntry from '../../utils/useDeleteEntry';
-import { useNavigate, useParams } from 'react-router-dom';
+import EmptyIcon from './EmptyIcon';
+import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 type SingleEntryProps = {
@@ -36,27 +37,44 @@ function SingleEntry(): JSX.Element {
     return entryDate;
   };
 
-  const navigate = useNavigate();
   const params = useParams();
   const deleteDate = params.date;
   const deleteEntry = useDeleteEntry(deleteDate);
 
   async function handleClick() {
-    await deleteEntry();
-    navigate('/gallery');
+    try {
+      await deleteEntry();
+    } catch (error) {
+      console.log(error);
+    }
+    setEntry(null);
   }
 
   return (
     <div>
-      {entry && <Navigation headerTitle={getDate(entry.date)} />}
-      <div className={styles.container}>
-        {entry && <img className={styles.image} src={entry.imageUrl} alt="" />}
-        {entry && <h1>{entry.title}</h1>}
-        {entry && <p className={styles.text}>{entry.text}</p>}
-        <div className={styles.delete} onClick={() => handleClick()}>
-          delete
+      {entry ? (
+        <Navigation headerTitle={getDate(entry.date)} />
+      ) : (
+        <Navigation headerTitle="Tabula rasa" />
+      )}
+      {entry ? (
+        <div className={styles.container}>
+          <img className={styles.image} src={entry.imageUrl} alt="" />
+          <h1>{entry.title}</h1>
+          <p className={styles.text}>{entry.text}</p>
+          <div className={styles.delete} onClick={() => handleClick()}>
+            delete
+          </div>
         </div>
-      </div>
+      ) : (
+        <article className={styles.empty}>
+          <EmptyIcon />
+          Sorry, nothing to show here!
+          <Link to={'/add'} className={styles.link}>
+            Do you want to add something?
+          </Link>
+        </article>
+      )}
     </div>
   );
 }
