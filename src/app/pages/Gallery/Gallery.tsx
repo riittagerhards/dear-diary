@@ -4,41 +4,12 @@ import useGetEntries from '../../utils/useGetEntries';
 import styles from './Gallery.module.css';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { monthsLong, monthsTwoDigit } from '../../utils/dateData';
 
 function Gallery(): JSX.Element {
   const entries = useGetEntries();
   const [selectDate, setSelectDate] = useState('');
   const [dateOptions, setDateOptions] = useState<string[] | null>(null);
-
-  const monthsLong = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
-
-  const monthsTwoDigit = [
-    '01',
-    '02',
-    '03',
-    '04',
-    '05',
-    '06',
-    '07',
-    '08',
-    '09',
-    '10',
-    '11',
-    '12',
-  ];
 
   useEffect(() => {
     if (!entries) {
