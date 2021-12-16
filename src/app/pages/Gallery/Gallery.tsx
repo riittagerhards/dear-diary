@@ -4,7 +4,7 @@ import Button from '../../components/Button/Button';
 import ToTopIcon from './ToTopIcon';
 import useGetEntries from '../../utils/useGetEntries';
 import styles from './Gallery.module.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { monthsLong, monthsTwoDigit } from '../../utils/dateData';
 
@@ -30,8 +30,9 @@ function Gallery(): JSX.Element {
     monthsTwoDigit[formattedDate.getMonth()]
   }`;
 
-  const filteredEntries = entries?.filter((entry) =>
-    entry.date.startsWith(filterDate)
+  const filteredEntries = useMemo(
+    () => entries?.filter((entry) => entry.date.startsWith(filterDate)),
+    [entries, filterDate]
   );
 
   const handleClick = () => {
