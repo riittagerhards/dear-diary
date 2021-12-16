@@ -4,6 +4,7 @@ import useDeleteEntry from '../../utils/useDeleteEntry';
 import EmptyIcon from './EmptyIcon';
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import Button from '../../components/Button/Button';
 
 type SingleEntryProps = {
   imageUrl: string;
@@ -42,6 +43,7 @@ function SingleEntry(): JSX.Element {
   const deleteEntry = useDeleteEntry(deleteDate);
 
   async function handleClick() {
+    console.log('testing');
     try {
       await deleteEntry();
     } catch (error) {
@@ -62,9 +64,7 @@ function SingleEntry(): JSX.Element {
           <img className={styles.image} src={entry.imageUrl} alt="" />
           <h1>{entry.title}</h1>
           <p className={styles.text}>{entry.text}</p>
-          <div className={styles.delete} onClick={() => handleClick()}>
-            delete
-          </div>
+          <Button name="delete" type="button" onClick={() => handleClick()} />
         </div>
       ) : (
         <article className={styles.empty}>
