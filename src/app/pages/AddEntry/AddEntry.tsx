@@ -4,6 +4,7 @@ import Navigation from '../../components/Navigation/Navigation';
 import UploadImage from '../../components/UploadImage/UploadImage';
 import usePostEntry from '../../utils/usePostEntry';
 import { FormEvent, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function AddEntry(): JSX.Element {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
@@ -11,6 +12,7 @@ function AddEntry(): JSX.Element {
   const [date, setDate] = useState('');
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
+  const navigate = useNavigate();
 
   let content;
   if (!imageUrl) {
@@ -29,12 +31,18 @@ function AddEntry(): JSX.Element {
       text,
     };
 
-    await postEntry(entry);
-
-    setImageUrl(null);
-    setTitle('');
-    setDate('');
-    setText('');
+    try {
+      await postEntry(entry);
+    } catch (error) {
+      console.log(error);
+    }
+    setTimeout(() => {
+      setImageUrl(null);
+      setTitle('');
+      setDate('');
+      setText('');
+      navigate('/gallery');
+    }, 1000);
   };
 
   return (
