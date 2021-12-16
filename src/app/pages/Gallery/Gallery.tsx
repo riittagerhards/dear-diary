@@ -1,5 +1,7 @@
 import Navigation from '../../components/Navigation/Navigation';
 import GalleryCard from '../../components/GalleryCard/GalleryCard';
+import Button from '../../components/Button/Button';
+import ToTopIcon from './ToTopIcon';
 import useGetEntries from '../../utils/useGetEntries';
 import styles from './Gallery.module.css';
 import { useEffect, useState } from 'react';
@@ -32,6 +34,10 @@ function Gallery(): JSX.Element {
     entry.date.startsWith(filterDate)
   );
 
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className={styles.container}>
       <Navigation headerTitle={'Gallery'} />
@@ -46,9 +52,11 @@ function Gallery(): JSX.Element {
             return <option key={entry}>{entry}</option>;
           })}
         </select>
-        <div className={styles.showAll} onClick={() => setSelectDate('')}>
-          Show all
-        </div>
+        <Button
+          name="Show all"
+          type="button"
+          onClick={() => setSelectDate('')}
+        />
       </div>
       <div>
         {entries?.length === 0 && (
@@ -71,6 +79,7 @@ function Gallery(): JSX.Element {
             </Link>
           ))}
       </div>
+      <ToTopIcon className={styles.icon} onClick={handleClick} />
     </div>
   );
 }
