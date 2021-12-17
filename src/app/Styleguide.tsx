@@ -62,16 +62,30 @@ function Styleguide(): JSX.Element {
       </div>
       <button
         style={{
-          backgroundColor: 'var(--color-effect)',
+          backgroundColor: 'var(--color-secondary)',
           color: 'var(--color-text-effect)',
           fontFamily: 'var(--font-text)',
           border: 'none',
-          width: '4rem',
+          marginRight: '0.5rem',
+          width: '8rem',
           height: '1.2rem',
           borderRadius: 'var(--border-radius-button)',
         }}
       >
-        button
+        button inactive
+      </button>
+      <button
+        style={{
+          backgroundColor: 'var(--color-effect)',
+          color: 'var(--color-text-effect)',
+          fontFamily: 'var(--font-text)',
+          border: 'none',
+          width: '8rem',
+          height: '1.2rem',
+          borderRadius: 'var(--border-radius-button)',
+        }}
+      >
+        button active
       </button>
     </div>
   );
