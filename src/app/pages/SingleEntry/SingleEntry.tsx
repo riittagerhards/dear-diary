@@ -43,7 +43,6 @@ function SingleEntry(): JSX.Element {
   const deleteEntry = useDeleteEntry(deleteDate);
 
   async function handleClick() {
-    console.log('testing');
     try {
       await deleteEntry();
     } catch (error) {
