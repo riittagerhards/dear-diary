@@ -4,6 +4,17 @@
   text-align: center;
   overflow: hidden;
   gap: 1.5rem;
+  animation: fadein 1.5s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .image {
@@ -19,22 +30,6 @@
   text-align: justify;
 }
 
-.delete {
-  background-color: var(--color-secondary);
-  height: 1.5rem;
-  color: var(--color-text-effect);
-  border-radius: var(--border-radius-button);
-}
-
-.delete:hover {
-  background-color: var(--color-effect);
-}
-
-.delete:active {
-  background-color: var(--color-effect);
-  transform: translateY(3px);
-}
-
 .empty {
   background-color: var(--color-primary);
   border-radius: var(--border-radius-card);
@@ -46,6 +41,7 @@
   text-align: center;
   color: var(--color-text-effect);
   font-size: 1rem;
+  animation: fadein 0.8s;
 }
 
 .link {
