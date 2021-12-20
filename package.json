@@ -17,6 +17,7 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
+    "@amir04lm26/react-modern-calendar-date-picker": "^1.0.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "history": "^5.1.0",
