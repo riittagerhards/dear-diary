@@ -1,5 +1,5 @@
 import 'react-modern-calendar-datepicker/lib/DatePicker.css';
-import { Calendar } from 'react-modern-calendar-datepicker';
+import { Calendar } from '@amir04lm26/react-modern-calendar-date-picker';
 import './Calendar.styles.css';
 import useGetEntries from '../../utils/useGetEntries';
 

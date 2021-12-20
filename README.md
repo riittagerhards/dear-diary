@@ -1,10 +1,10 @@
-<img width="30%" align="right" alt="logo" src="src/app/AppLogo.png"/>
-
-# Dear diary
+# 📝 Dear diary
 
 > Social media - for you alone
 
-Do you love to keep record on your life with pictures and write a short comment about your day? Without social media, for you alone - like writing a diary? In dear diary you can do all this and more. It allows you to add and remove diary entries, surf your pictures and read your comments. A calendar helps you to keep track on your activities.
+Do you love to keep record on your life with pictures and write a short comment about your day? Without social media, for you alone - like writing a diary? In dear diary you can do all this and more. It allows you to add and remove diary entries, browse your pictures and read your comments. A calendar helps you to keep track on your activities.
+
+The App is optimized for 375px\*667px display. App design is responsive, other screen sizes work fine as well.
 
 ## 🧮 Installing / Developing
 
@@ -55,7 +55,7 @@ To build the project, run:
 npm run build
 ```
 
-This will build the client, server and storybook.
+This will build the client, server and storybook:
 
 ```shell
 npm start
