@@ -66,7 +66,11 @@ function Gallery(): JSX.Element {
         {!selectDate &&
           entries?.map((entry) => (
             <Link key={entry.date} to={`/gallery/${entry.date}`}>
-              <GalleryCard date={new Date(entry.date)} src={entry.imageUrl} />
+              <GalleryCard
+                date={new Date(entry.date)}
+                src={entry.imageUrl}
+                text={entry.text}
+              />
             </Link>
           ))}
         {selectDate &&
@@ -76,6 +80,7 @@ function Gallery(): JSX.Element {
                 key={entry.date}
                 date={new Date(entry.date)}
                 src={entry.imageUrl}
+                text={entry.text}
               />
             </Link>
           ))}
