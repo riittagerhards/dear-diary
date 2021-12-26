@@ -47,6 +47,9 @@
 
 .text {
   background-color: var(--color-background);
+  display: flex;
+  align-items: center;
+  justify-items: center;
   height: 100%;
   margin: 0;
   padding: 1rem;
