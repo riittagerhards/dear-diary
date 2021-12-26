@@ -30,6 +30,12 @@
   text-align: justify;
 }
 
+.buttonContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
 .empty {
   background-color: var(--color-primary);
   border-radius: var(--border-radius-card);
