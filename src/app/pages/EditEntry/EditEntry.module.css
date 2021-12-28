@@ -1,0 +1,67 @@
+.container {
+  display: grid;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.form {
+  margin: 1.5rem 1rem;
+  height: 80vh;
+  display: grid;
+  grid-template-rows: 12rem 1fr 1.5rem 12rem 1.5rem;
+  gap: 1rem;
+  animation: fadein 0.8s;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius-card);
+}
+
+.titleInput {
+  text-align: center;
+  font-size: 1.2rem;
+  border: none;
+}
+
+.titleInput::placeholder {
+  color: var(--color-text);
+}
+
+.textInput {
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: var(--border-radius-card);
+  text-align: center;
+  font-size: 1rem;
+  font-family: var(--font-text);
+  color: var(--color-text-effect);
+  padding: 1rem;
+}
+
+.textInput::placeholder {
+  font-family: var(--font-text);
+  color: var(--color-text-effect);
+}
+
+.dateInput {
+  font-size: 1rem;
+  border: solid var(--color-primary) 0.1rem;
+  border-radius: var(--border-radius-button);
+  font-family: var(--font-text);
+  text-align: center;
+}
+
+input.textInput::placeholder {
+  color: var(--color-text-effect);
+}
