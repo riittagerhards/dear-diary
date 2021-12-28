@@ -8,14 +8,13 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 type SingleEntryProps = {
   imageUrl: string;
-  date: string;
+  newDate: string;
   title: string;
   text: string;
 };
 
 function EditEntry(): JSX.Element {
   const [imageUrl, setImageUrl] = useState<string | null>('');
-  //const [date, setDate] = useState('');
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
   const navigate = useNavigate();
@@ -24,13 +23,6 @@ function EditEntry(): JSX.Element {
   const params = useParams();
   const editDate = params.date;
   const editEntry = useEditEntry(editDate);
-
-  let content;
-  if (!imageUrl) {
-    content = <UploadImage onUpload={setImageUrl} />;
-  } else {
-    content = <img src={imageUrl} className={styles.image} />;
-  }
 
   const getEntries = async () => {
     const response = await fetch(`/api/entries/${date}`);
@@ -59,33 +51,36 @@ function EditEntry(): JSX.Element {
     }
     setTimeout(() => {
       navigate('/gallery');
-    }, 1000);
+    }, 500);
   };
 
   return (
     <div className={styles.container}>
       <Navigation headerTitle={'Make some changes!'} />
       <form className={styles.form} onSubmit={handleSubmit}>
-        {content}
+        {imageUrl ? (
+          <img src={imageUrl} className={styles.image} />
+        ) : (
+          <span className={styles.imageContainer}>
+            <img src={entry?.imageUrl} className={styles.image} />
+            <UploadImage onUpload={setImageUrl} />
+          </span>
+        )}
         <input
           className={styles.titleInput}
           type="text"
-          value={entry?.title}
+          placeholder={entry?.title}
+          value={title}
           onChange={(event) => setTitle(event.target.value)}
           required
         />
-        <input
-          className={styles.dateInput}
-          type="date"
-          value={entry?.date}
-          // onChange={(event) => setDate(event.target.value)}
-          required
-        />
+        <input className={styles.dateInput} type="date" value={date} readOnly />
         <textarea
           className={styles.textInput}
           maxLength={250}
           rows={7}
-          value={entry?.text}
+          value={text}
+          placeholder={entry?.text}
           onChange={(event) => setText(event.target.value)}
         />
         <Button className={styles.button} type={'submit'} name={'Save'} />

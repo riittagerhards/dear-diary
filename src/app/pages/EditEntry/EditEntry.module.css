@@ -21,6 +21,12 @@
   animation: fadein 0.8s;
 }
 
+.imageContainer {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0.5rem;
+}
+
 .image {
   height: 100%;
   width: 100%;
