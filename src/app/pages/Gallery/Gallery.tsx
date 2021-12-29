@@ -59,7 +59,7 @@ function Gallery(): JSX.Element {
           onClick={() => setSelectDate('')}
         />
       </div>
-      <div>
+      <div className={styles.cards}>
         {entries?.length === 0 && (
           <span>I&apos;m sorry, nothing to show here</span>
         )}
