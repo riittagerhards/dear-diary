@@ -71,3 +71,22 @@
 input.textInput::placeholder {
   color: var(--color-text-effect);
 }
+
+.empty {
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius-card);
+  display: grid;
+  grid-template-rows: 2fr 1fr 1fr;
+  height: 65vh;
+  margin: 3rem 1rem;
+  padding: 1rem;
+  text-align: center;
+  color: var(--color-text-effect);
+  font-size: 1rem;
+  animation: fadein 0.8s;
+}
+
+.link {
+  color: var(--color-text-effect);
+  text-decoration: underline;
+}
