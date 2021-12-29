@@ -64,10 +64,14 @@ function SingleEntry(): JSX.Element {
           <h1>{entry.title}</h1>
           <p className={styles.text}>{entry.text}</p>
           <span className={styles.buttonContainer}>
-            <Link key={entry.date} to={`/edit/${entry.date}`}>
-              <Button name="edit" type="button" />
+            <Link
+              key={entry.date}
+              to={`/edit/${entry.date}`}
+              className={styles.edit}
+            >
+              Edit
             </Link>
-            <Button name="delete" type="button" onClick={() => handleClick()} />
+            <Button name="Delete" type="button" onClick={() => handleClick()} />
           </span>
         </div>
       ) : (
