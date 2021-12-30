@@ -30,6 +30,23 @@
   text-align: justify;
 }
 
+.buttonContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.edit {
+  background-color: var(--color-secondary);
+  border: none;
+  text-align: center;
+  color: var(--color-text-effect);
+  height: 1.5rem;
+  width: 100%;
+  font-size: 1rem;
+  border-radius: var(--border-radius-button);
+}
+
 .empty {
   background-color: var(--color-primary);
   border-radius: var(--border-radius-card);

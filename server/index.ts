@@ -65,7 +65,24 @@ app.delete('/api/entries/:date', async (request, response) => {
   if (deleteResult.deletedCount) {
     response.send('Delete succesfull');
   } else {
-    response.status(404).send();
+    response.status(404);
+  }
+});
+
+//edit an entry by date
+
+app.patch('/api/entries/:date', async (request, response) => {
+  const entries = getEntryCollection();
+  const entry = request.params.date;
+  const newEntry = request.body;
+  const editResult = await entries.findOneAndUpdate(
+    { date: entry },
+    { $set: newEntry }
+  );
+  if (!editResult) {
+    response.status(404).send('Nothing to edit here');
+  } else {
+    response.status(200).send('Your day was succesfully updated');
   }
 });
 

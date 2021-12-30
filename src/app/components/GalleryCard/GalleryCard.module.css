@@ -44,3 +44,15 @@
   object-fit: cover;
   overflow: hidden;
 }
+
+.text {
+  background-color: var(--color-background);
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 1rem;
+  border: solid 1.5px var(--color-primary);
+  border-radius: 0 var(--border-radius-card) var(--border-radius-card) 0;
+}

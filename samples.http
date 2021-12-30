@@ -17,3 +17,11 @@ Content-Type: application/json
 
 ### DELETE an entry
 DELETE http://localhost:3001/api/entries/2021-11-29 HTTP/1.1
+
+### EDIT an entry
+PATCH http://localhost:3001/api/entries/2021-11-29 HTTP/1.1
+Content-Type: application/json
+
+{
+    "text": "testing if my patch works"
+}

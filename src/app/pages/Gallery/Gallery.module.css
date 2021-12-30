@@ -24,6 +24,11 @@
   align-content: center;
 }
 
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
 .icon {
   background-color: var(--color-secondary);
   border-radius: var(--border-radius-button);

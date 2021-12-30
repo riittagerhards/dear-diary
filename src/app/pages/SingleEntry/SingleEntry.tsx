@@ -63,7 +63,16 @@ function SingleEntry(): JSX.Element {
           <img className={styles.image} src={entry.imageUrl} alt="" />
           <h1>{entry.title}</h1>
           <p className={styles.text}>{entry.text}</p>
-          <Button name="delete" type="button" onClick={() => handleClick()} />
+          <span className={styles.buttonContainer}>
+            <Link
+              key={entry.date}
+              to={`/edit/${entry.date}`}
+              className={styles.edit}
+            >
+              Edit
+            </Link>
+            <Button name="Delete" type="button" onClick={() => handleClick()} />
+          </span>
         </div>
       ) : (
         <article className={styles.empty}>
