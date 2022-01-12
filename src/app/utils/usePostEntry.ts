@@ -11,6 +11,13 @@ function usePostEntry() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(entry),
+    }).then((response) => {
+      response.headers.get('content-type')?.includes('application/json');
+
+      if (!response.ok) {
+        const message = 'You cannot add a day twice!';
+        alert(message);
+      }
     });
   };
   return { postEntry };
