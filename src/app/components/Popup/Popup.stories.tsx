@@ -8,4 +8,6 @@ export default {
   },
 };
 
-export const Default = (): JSX.Element => <Popup message={'You cannot add a day twice'}/>;
+export const Default = (): JSX.Element => (
+  <Popup message={'You cannot add a day twice'} />
+);
