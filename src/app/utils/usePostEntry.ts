@@ -15,7 +15,8 @@ function usePostEntry() {
       response.headers.get('content-type')?.includes('application/json');
 
       if (!response.ok) {
-        const message = 'You cannot add a day twice!';
+        const message =
+          'You cannot add a day twice! Maybe you want to edit it?';
         alert(message);
       }
     });
