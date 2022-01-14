@@ -3,10 +3,11 @@ import UploadImageIcon from '../../components/UploadImage/UploadImageIcon';
 import { ChangeEvent } from 'react';
 
 type ImageUploadProps = {
+  className?: string;
   onUpload: (url: string) => void;
 };
 
-function UploadImage({ onUpload }: ImageUploadProps): JSX.Element {
+function UploadImage({ onUpload, className }: ImageUploadProps): JSX.Element {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (!event.target.files || event.target.files.length === 0) {
       return;
@@ -28,14 +29,16 @@ function UploadImage({ onUpload }: ImageUploadProps): JSX.Element {
   };
 
   return (
-    <label className={styles.container}>
-      <UploadImageIcon />
-      <input
-        type="file"
-        className={styles.imageUpload}
-        onChange={handleChange}
-      />
-    </label>
+    <div className={className}>
+      <label className={styles.container}>
+        <UploadImageIcon />
+        <input
+          type="file"
+          className={styles.imageUpload}
+          onChange={handleChange}
+        />
+      </label>
+    </div>
   );
 }
 

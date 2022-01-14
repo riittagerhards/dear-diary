@@ -69,7 +69,7 @@ function EditEntry(): JSX.Element {
           ) : (
             <span className={styles.imageContainer}>
               <img src={entry?.imageUrl} className={styles.image} />
-              <UploadImage onUpload={setImageUrl} />
+              <UploadImage onUpload={setImageUrl} className={styles.upload} />
             </span>
           )}
           <input
